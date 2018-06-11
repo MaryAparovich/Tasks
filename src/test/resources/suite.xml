@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="suite" verbose="1">
+    <test name="Groups">
+        <groups>
+            <run>
+                <include name="tut_by"></include>
+                <include name="gmail"></include>
+                <include name="delta"></include>
+                <include name="cnn"></include>
+                <include name="ftp"></include>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.elinext.aparovich.tests.*" />
+        </packages>
+    </test>
+</suite>
