@@ -41,13 +41,13 @@ public class TutBySearchTest {
         resultPage = new ResultPage(driver);
         int countResults = resultPage.getNumberResultsFound();
         System.out.println(countResults + " elements found on this page");
-        WebElement element = resultPage.getElementByText(SEARCH_TEXT_FIRST);
+        WebElement element = resultPage.getElementByText(SEARCH_TEXT_SECOND);
 
         if (element != null) {
             WebElement elementTitle = resultPage.getElementTitle(element);
             elementTitle.click();
         } else {
-            throw new WebDriverException(SEARCH_TEXT_FIRST + " not found");
+            throw new WebDriverException(SEARCH_TEXT_SECOND + " not found");
         }
     }
 
