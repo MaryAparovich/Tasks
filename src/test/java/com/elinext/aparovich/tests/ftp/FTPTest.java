@@ -1,20 +1,19 @@
 package com.elinext.aparovich.tests.ftp;
 
-import ftp.FtpClient;
+import com.elinext.aparovich.ftp.FtpClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import static org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class FTPTest {
 
-    private static final String HOST = "127.0.0.1";
+    private static final String HOST = "ftp.byfly.by";
     private static final int PORT = 21;
-    private static final String USERNAME = "user";
-    private static final String PASSWORD = "user";
-    private static final String TEST_DIR_NAME = "Test";
+    private static final String USERNAME = "anonymous";
+    private static final String PASSWORD = "anonymous";
+    private static final String TEST_DIR_NAME = "new";
     private final Logger logger = LogManager.getLogger();
     private FtpClient ftpClient;
 
@@ -45,15 +44,11 @@ public class FTPTest {
         if (!ftpClient.isDirectoryExists(TEST_DIR_NAME)) {
             boolean isDirectoryMade = ftpClient.makeDirectory(TEST_DIR_NAME);
             logger.info("Created new directory '" + TEST_DIR_NAME + "'");
-            assertTrue(isDirectoryMade, "The directory was not created");
         } else {
-            logger.info("Directory '" + TEST_DIR_NAME + "' already exists!");
+            logger.info("Directory '" + TEST_DIR_NAME + "'could not create!");
         }
-
-        boolean isDirectoryDeleted = ftpClient.deleteDirectory(TEST_DIR_NAME);
-        logger.info("Deleted directory '" + TEST_DIR_NAME + "'");
-        assertTrue(isDirectoryDeleted, "The directory was not deleted");
     }
+
 
     @AfterMethod(groups = {"ftp"})
     public void tearDown() throws Exception {

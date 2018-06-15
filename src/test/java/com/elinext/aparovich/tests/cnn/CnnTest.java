@@ -1,6 +1,6 @@
 package com.elinext.aparovich.tests.cnn;
 
-import cnn.ParserHtml;
+import com.elinext.aparovich.cnn.ParserHtml;
 import org.jsoup.nodes.Document;
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;

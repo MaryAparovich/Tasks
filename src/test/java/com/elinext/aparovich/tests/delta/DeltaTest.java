@@ -24,7 +24,6 @@ public class DeltaTest {
     private static final String PHONENUMBER = "12457296301";
     private static final String EMAIL = "mary@gmail.com";
 
-
     @BeforeMethod(groups = { "delta" }, description = "Init browser")
     public void setUp() {
         driver = DriverSingleton.getDriver();
